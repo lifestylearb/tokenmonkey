@@ -1,0 +1,23 @@
+[toolchain]
+anchor_version = "0.31.1"
+package_manager = "yarn"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+tokenmonkey = "92hWXc3pHexUCxQ2YYxTrFwqUPpRn173fZcXBSFia11b"
+
+[programs.devnet]
+tokenmonkey = "92hWXc3pHexUCxQ2YYxTrFwqUPpRn173fZcXBSFia11b"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "npx mocha --require tsx --timeout 1000000 tests/**/*.ts"

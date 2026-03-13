@@ -1,0 +1,23 @@
+{
+  "name": "tokenmonkey-solana-deploy",
+  "version": "1.0.0",
+  "description": "Solana SPL token deployment for $MNKY (TokenMonkey Casino)",
+  "private": true,
+  "scripts": {
+    "deploy": "ts-node deploy.ts",
+    "verify": "ts-node verify.ts"
+  },
+  "dependencies": {
+    "@metaplex-foundation/mpl-token-metadata": "^3.3.0",
+    "@metaplex-foundation/umi": "^0.9.2",
+    "@metaplex-foundation/umi-bundle-defaults": "^0.9.2",
+    "@solana/spl-token": "^0.4.9",
+    "@solana/web3.js": "^1.95.8",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}

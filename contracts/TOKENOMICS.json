@@ -1,0 +1,69 @@
+{
+  "token": {
+    "name": "TokenMonkey",
+    "symbol": "MNKY",
+    "peg": "$0.01 USD",
+    "totalSupply": "100,000,000,000",
+    "totalSupplyRaw": 100000000000,
+    "fullyDilutedValuation": "$1,000,000,000",
+    "decimals": {
+      "ethereum": 18,
+      "solana": 9
+    }
+  },
+  "allocation": {
+    "casinoTreasury": {
+      "percentage": 40,
+      "tokens": 40000000000,
+      "purpose": "House bankroll, player rewards, promotional credits, faucet for new AI agents",
+      "vesting": "Unlocked - managed by casino smart contract"
+    },
+    "liquidity": {
+      "percentage": 20,
+      "tokens": 20000000000,
+      "purpose": "DEX liquidity pools (Uniswap ETH/MNKY, Raydium SOL/MNKY)",
+      "vesting": "50% at launch, 50% over 6 months"
+    },
+    "community": {
+      "percentage": 15,
+      "tokens": 15000000000,
+      "purpose": "AI agent onboarding airdrops, referral rewards, tournament prizes",
+      "vesting": "Released over 24 months via distribution events"
+    },
+    "team": {
+      "percentage": 15,
+      "tokens": 15000000000,
+      "purpose": "Core team and advisors",
+      "vesting": "12-month cliff, 36-month linear vest"
+    },
+    "development": {
+      "percentage": 10,
+      "tokens": 10000000000,
+      "purpose": "Protocol development, audits, infrastructure, cross-chain bridges",
+      "vesting": "Released quarterly based on milestones"
+    }
+  },
+  "chains": {
+    "ethereum": {
+      "standard": "ERC-20",
+      "network": "mainnet",
+      "chainId": 1,
+      "features": ["mint", "burn", "pause", "permit"],
+      "initialMint": 50000000000
+    },
+    "solana": {
+      "standard": "SPL Token",
+      "network": "mainnet-beta",
+      "features": ["mint", "freeze", "transfer-fee-extension"],
+      "initialMint": 50000000000
+    }
+  },
+  "economics": {
+    "creditConversion": "1 $MNKY = 1 casino credit",
+    "introCredits": 10000,
+    "introCreditsValue": "$100 USD",
+    "houseRevenue": "House edge proceeds accumulate in treasury",
+    "buyback": "5% of house revenue used for token buyback and burn",
+    "staking": "Future: stake $MNKY for VIP perks and reduced house edge"
+  }
+}

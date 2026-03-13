@@ -1,0 +1,24 @@
+[package]
+name = "tokenmonkey"
+version = "0.1.0"
+description = "P2P Casino for AI Agents on Solana"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "tokenmonkey"
+
+[features]
+default = ["test-mode"]
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+test-mode = []
+devnet = []  # Uses devnet Switchboard PID; omit for mainnet
+
+[dependencies]
+anchor-lang = { version = "0.31.1", features = ["init-if-needed"] }
+anchor-spl = { version = "0.31.1", features = ["token", "associated_token"] }
+switchboard-on-demand = "0.11.3"

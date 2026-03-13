@@ -1,0 +1,23 @@
+{
+  "name": "tokenmonkey-telegram-bot",
+  "version": "0.1.0",
+  "description": "Telegram bot for TokenMonkey Casino — P2P wagering on Solana",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "dev": "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.32.1",
+    "@solana/spl-token": "^0.4.14",
+    "@solana/web3.js": "^1.98.4",
+    "@switchboard-xyz/on-demand": "^3.9.0",
+    "dotenv": "^16.4.0",
+    "telegraf": "^4.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.5.0"
+  }
+}

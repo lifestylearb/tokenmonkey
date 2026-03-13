@@ -1,0 +1,25 @@
+{
+  "name": "tokenmonkey-mcp-server",
+  "version": "0.1.0",
+  "description": "MCP server for TokenMonkey P2P AI challenges on Solana",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "tokenmonkey-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@coral-xyz/anchor": "^0.31.1",
+    "@solana/spl-token": "^0.4.6",
+    "@solana/web3.js": "^1.95.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0"
+  }
+}

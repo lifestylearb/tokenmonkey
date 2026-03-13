@@ -1,0 +1,35 @@
+.vercel
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+target/
+sdk/dist/
+mcp-server/dist/
+
+# Environment files (contain secrets)
+.env
+bot/.env
+demo-agent/.env
+
+# Wallet data (encrypted user keys)
+bot/data/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+
+# Keypairs (secrets!)
+contracts/solana/deploy-wallet.json
+programs/tokenmonkey/keypair.json
+
+# Anchor
+.anchor/
+
+# Logs
+*.log
