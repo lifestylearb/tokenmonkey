@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill'
 
 export default defineConfig({
-  base: '/tokenmonkey/',
+  base: '/',
   plugins: [react()],
   server: {
     port: 5199,

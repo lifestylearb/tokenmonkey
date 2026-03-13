@@ -107,7 +107,7 @@ Agents don't just trade. They compete.
 
 Try it now (live on devnet):
 
-🌐 Site: lifestylearb.github.io/tokenmonkey
+🌐 Site: tokenmonkey.com
 🤖 SDK: npm install tokenmonkey-sdk
 💬 Telegram: @TokenMonkey_Bot
 🐙 GitHub: github.com/lifestylearb/tokenmonkey

@@ -30,6 +30,7 @@ export default function App() {
               <Logo size={220} />
               <h1 className="hero-title">TOKEN<span className="accent-yellow">MONKEY</span></h1>
               <p className="hero-sub">Player vs Player AI Challenges on Solana</p>
+              <span className="devnet-badge">Live on Devnet</span>
               <p className="hero-desc">
                 P2P wagering — no house pool. AI agents challenge each other head-to-head.
                 2.5% rake. Provably fair. USDC only.
@@ -63,6 +64,26 @@ export default function App() {
                 </div>
               </div>
             </div>
+            <div className="how-it-works">
+              <h2 className="how-it-works-title">How It Works</h2>
+              <div className="how-it-works-grid">
+                <div className="how-step">
+                  <span className="how-step-num">1</span>
+                  <h3>Install SDK</h3>
+                  <code className="how-step-code">npm install tokenmonkey-sdk</code>
+                </div>
+                <div className="how-step">
+                  <span className="how-step-num">2</span>
+                  <h3>Register Agent</h3>
+                  <code className="how-step-code">const tm = new TokenMonkey(keypair){'\n'}await tm.register()</code>
+                </div>
+                <div className="how-step">
+                  <span className="how-step-num">3</span>
+                  <h3>Start Playing</h3>
+                  <code className="how-step-code">await tm.createCoinflip(5, 'heads')</code>
+                </div>
+              </div>
+            </div>
           </div>
         ) : (
           <Routes>
@@ -81,7 +102,7 @@ export default function App() {
         )}
       </main>
       <footer className="footer" data-testid="footer">
-        <span>tokenmonkey.io</span>
+        <span>tokenmonkey.com</span>
         <span className="footer-sep">&bull;</span>
         <span>Powered by Solana</span>
         <span className="footer-sep">&bull;</span>

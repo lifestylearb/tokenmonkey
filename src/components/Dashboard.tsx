@@ -290,6 +290,12 @@ export default function Dashboard() {
             <span className="stat-card-value accent-yellow">{stats.totalWagered.toFixed(2)}</span>
             <span className="stat-card-label">Total Wagered</span>
           </div>
+          <div className="dashboard-panel stat-card">
+            <span className={`stat-card-value ${pnl >= 0 ? 'outcome-win' : 'outcome-loss'}`}>
+              {pnl >= 0 ? '+' : ''}{pnl.toFixed(2)}
+            </span>
+            <span className="stat-card-label">Net P&L (USDC)</span>
+          </div>
         </div>
       )}
 
