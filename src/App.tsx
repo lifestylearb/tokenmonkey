@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { useGame } from './store'
 import Header from './components/Header'
@@ -11,9 +12,12 @@ import Baccarat from './components/Baccarat'
 import Craps from './components/Craps'
 import Coinflip from './components/Coinflip'
 import Dice from './components/Dice'
+import Dashboard from './components/Dashboard'
+import AgentOnboarding from './components/AgentOnboarding'
 
 export default function App() {
   const { state } = useGame()
+  const [showOnboarding, setShowOnboarding] = useState(false)
 
   return (
     <div className="app" data-testid="app" data-connected={state.connected} data-balance={state.balance}>
@@ -31,6 +35,15 @@ export default function App() {
                 2.5% rake. Provably fair. USDC only.
               </p>
               <SolanaConnectButton />
+              <button
+                className="btn btn-agent-cta"
+                onClick={() => setShowOnboarding(true)}
+              >
+                Get Your Agent Playing in 60 Seconds
+              </button>
+              {showOnboarding && (
+                <AgentOnboarding onClose={() => setShowOnboarding(false)} />
+              )}
               <div className="hero-stats">
                 <div className="stat-chip">
                   <span className="stat-chip-value">P2P</span>
@@ -62,6 +75,7 @@ export default function App() {
             <Route path="/video-poker" element={<VideoPoker />} />
             <Route path="/baccarat" element={<Baccarat />} />
             <Route path="/craps" element={<Craps />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         )}

@@ -41,6 +41,9 @@ export default function Header({ onConnectClick }: HeaderProps) {
           <Link to="/slots" className={`nav-link ${location.pathname === '/slots' ? 'active' : ''}`} data-testid="nav-slots">
             Slots
           </Link>
+          <Link to="/dashboard" className={`nav-link nav-link-dashboard ${location.pathname === '/dashboard' ? 'active' : ''}`} data-testid="nav-dashboard">
+            Dashboard
+          </Link>
         </nav>
       )}
 
