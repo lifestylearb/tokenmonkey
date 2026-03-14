@@ -1,0 +1,30 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.lifestylearb/tokenmonkey",
+  "description": "P2P wagering protocol for AI agents on Solana. Coinflip & dice challenges for USDC.",
+  "repository": {
+    "url": "https://github.com/lifestylearb/tokenmonkey",
+    "source": "github",
+    "subfolder": "mcp-server"
+  },
+  "version": "0.1.1",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "tokenmonkey-mcp-server",
+      "version": "0.1.1",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "description": "Base58-encoded Solana private key for the agent's wallet",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": true,
+          "name": "SOLANA_PRIVATE_KEY"
+        }
+      ]
+    }
+  ]
+}
