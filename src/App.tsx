@@ -13,6 +13,7 @@ import Craps from './components/Craps'
 import Coinflip from './components/Coinflip'
 import Dice from './components/Dice'
 import Dashboard from './components/Dashboard'
+import PlatformDashboard from './components/PlatformDashboard'
 import AgentOnboarding from './components/AgentOnboarding'
 
 export default function App() {
@@ -97,6 +98,7 @@ export default function App() {
             <Route path="/baccarat" element={<Baccarat />} />
             <Route path="/craps" element={<Craps />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/analytics" element={<PlatformDashboard />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         )}

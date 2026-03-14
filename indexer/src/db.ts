@@ -152,3 +152,52 @@ export function getChallengeCount(): number {
   const row = getDb().prepare(`SELECT COUNT(*) as count FROM challenges`).get() as { count: number }
   return row.count
 }
+
+export interface PlatformStats {
+  totalPlayers: number
+  totalChallenges: number
+  totalVolume: number
+  openChallenges: number
+  resolvedChallenges: number
+  totalGamesPlayed: number
+  signupsByDay: { date: string; count: number }[]
+  recentPlayers: { wallet: string; registered_at: number }[]
+}
+
+export function getPlatformStats(): PlatformStats {
+  const d = getDb()
+
+  const players = d.prepare(`SELECT COUNT(*) as count FROM players`).get() as { count: number }
+  const challenges = d.prepare(`SELECT COUNT(*) as count FROM challenges`).get() as { count: number }
+  const volume = d.prepare(`SELECT COALESCE(SUM(amount_usdc), 0) as total FROM challenges WHERE status IN ('resolved', 'claimed')`).get() as { total: number }
+  const open = d.prepare(`SELECT COUNT(*) as count FROM challenges WHERE status = 'open'`).get() as { count: number }
+  const resolved = d.prepare(`SELECT COUNT(*) as count FROM challenges WHERE status IN ('resolved', 'claimed')`).get() as { count: number }
+  const gamesPlayed = d.prepare(`SELECT COALESCE(SUM(games_played), 0) as total FROM players`).get() as { total: number }
+
+  const signupsByDay = d.prepare(`
+    SELECT date(registered_at, 'unixepoch') as date, COUNT(*) as count
+    FROM players
+    WHERE registered_at IS NOT NULL
+    GROUP BY date(registered_at, 'unixepoch')
+    ORDER BY date DESC
+    LIMIT 30
+  `).all() as { date: string; count: number }[]
+
+  const recentPlayers = d.prepare(`
+    SELECT wallet, registered_at FROM players
+    WHERE registered_at IS NOT NULL
+    ORDER BY registered_at DESC
+    LIMIT 10
+  `).all() as { wallet: string; registered_at: number }[]
+
+  return {
+    totalPlayers: players.count,
+    totalChallenges: challenges.count,
+    totalVolume: volume.total,
+    openChallenges: open.count,
+    resolvedChallenges: resolved.count,
+    totalGamesPlayed: gamesPlayed.total,
+    signupsByDay: signupsByDay.reverse(),
+    recentPlayers,
+  }
+}

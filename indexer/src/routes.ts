@@ -7,6 +7,7 @@ import {
   getLeaderboard,
   getChallengeCount,
   getLastSyncSlot,
+  getPlatformStats,
 } from './db.js'
 
 export const router = Router()
@@ -88,6 +89,12 @@ router.get('/leaderboard', (req: Request, res: Response) => {
       winRate: p.games_played > 0 ? Math.round((p.wins / p.games_played) * 1000) / 10 : 0,
     })),
   })
+})
+
+// GET /api/platform — aggregate platform metrics
+router.get('/platform', (_req: Request, res: Response) => {
+  const stats = getPlatformStats()
+  res.json(stats)
 })
 
 // GET /api/health
