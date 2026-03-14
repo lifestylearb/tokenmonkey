@@ -98,7 +98,7 @@ export default function App() {
             <Route path="/baccarat" element={<Baccarat />} />
             <Route path="/craps" element={<Craps />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/analytics" element={<PlatformDashboard />} />
+            <Route path="/admin/analytics" element={<PlatformDashboard />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         )}

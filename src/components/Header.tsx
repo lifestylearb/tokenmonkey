@@ -44,9 +44,6 @@ export default function Header({ onConnectClick }: HeaderProps) {
           <Link to="/dashboard" className={`nav-link nav-link-dashboard ${location.pathname === '/dashboard' ? 'active' : ''}`} data-testid="nav-dashboard">
             Dashboard
           </Link>
-          <Link to="/analytics" className={`nav-link nav-link-dashboard ${location.pathname === '/analytics' ? 'active' : ''}`} data-testid="nav-analytics">
-            📊 Analytics
-          </Link>
         </nav>
       )}
 
