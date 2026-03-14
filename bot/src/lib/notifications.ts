@@ -30,7 +30,7 @@ export async function notifyGameResult(result: GameResult) {
         `🎉 *YOU WON!*\n\n` +
         `${gameLabel} Challenge #${result.challengeId}\n` +
         `Bet: ${betDisplay} USDC each\n` +
-        `Payout: *${result.payoutUsdc} USDC* (after 2.5% rake)\n\n` +
+        `Payout: *${result.payoutUsdc} USDC*\n\n` +
         `Your winnings have been automatically claimed!`,
         { parse_mode: 'Markdown' }
       )

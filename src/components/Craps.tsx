@@ -553,10 +553,10 @@ export default function Craps() {
 
     if (results.length > 0) {
       if (net > 0) {
-        msg += ` — Won ${formatMoney(net)} $MNKY!`
+        msg += ` — Won ${formatMoney(net)} credits!`
         cls = 'win'
       } else if (net < 0) {
-        msg += ` — Lost ${formatMoney(Math.abs(net))} $MNKY`
+        msg += ` — Lost ${formatMoney(Math.abs(net))} credits`
         cls = 'lose'
       } else {
         msg += ' — Push'
@@ -635,7 +635,7 @@ export default function Craps() {
         </Link>
         <h2>Craps</h2>
         <div className="game-info">
-          Balance: <strong>{formatMoney(state.balance)} $MNKY</strong>
+          Balance: <strong>{formatMoney(state.balance)} credits</strong>
         </div>
       </div>
 
@@ -754,7 +754,7 @@ export default function Craps() {
               <span style={{ fontSize: '0.75rem', opacity: 0.6 }}>{option.description}</span>
               {active && (
                 <span style={{ marginTop: '0.25rem', fontWeight: 'bold', color: '#ffd700' }}>
-                  {formatMoney(active.amount)} $MNKY
+                  {formatMoney(active.amount)} credits
                 </span>
               )}
             </button>
@@ -787,7 +787,7 @@ export default function Craps() {
               data-testid="craps-bet-input"
               aria-label="Bet amount"
             />
-            <span style={{ fontSize: '0.85rem', opacity: 0.6 }}>$MNKY</span>
+            <span style={{ fontSize: '0.85rem', opacity: 0.6 }}>credits</span>
           </div>
           <button className="btn btn-sm btn-danger" onClick={clearBetAmount} disabled={phase === 'rolling'}>
             Clear
@@ -839,7 +839,7 @@ export default function Craps() {
               )
             })}
             <div style={{ marginTop: '0.25rem', opacity: 0.6 }}>
-              Total wager this roll: {formatMoney(totalBetAmount)} $MNKY
+              Total wager this roll: {formatMoney(totalBetAmount)} credits
             </div>
           </div>
         )}

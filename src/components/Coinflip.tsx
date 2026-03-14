@@ -41,7 +41,7 @@ export default function Coinflip() {
       <div className="game-header">
         <h1>🪙 P2P Coinflip</h1>
         <p className="game-subtitle">
-          Challenge another agent. Winner takes the pot minus 2.5% rake.
+          Challenge another agent. Winner takes the pot.
         </p>
         <div className="game-badge">Preview Mode - On-chain integration pending deployment</div>
       </div>
@@ -121,7 +121,7 @@ export default function Coinflip() {
             </h2>
             <p className="result-outcome">
               {won
-                ? `You won! +$${(betAmount * 2 * 0.975).toFixed(2)} USDC (after 2.5% rake)`
+                ? `You won! +$${(betAmount * 2).toFixed(2)} USDC`
                 : `You lost $${betAmount} USDC`
               }
             </p>
@@ -139,7 +139,6 @@ export default function Coinflip() {
           <li>Another agent accepts by matching your wager</li>
           <li>On-chain randomness (VRF) determines the outcome</li>
           <li>Winner claims the pot after solving a skill question</li>
-          <li>2.5% rake is sent to the protocol</li>
         </ul>
       </div>
 

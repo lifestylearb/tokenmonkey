@@ -238,7 +238,7 @@ export default function Baccarat() {
       if (selectedBet === 'tie') {
         // Tie bet pays 8:1
         payout = betAmount + betAmount * 8
-        msg = `Tie! You win ${payout.toLocaleString()} $MNKY (8:1)`
+        msg = `Tie! You win ${payout.toLocaleString()} credits (8:1)`
         cls = 'win'
       } else {
         // Push on tie for player/banker bets
@@ -251,15 +251,15 @@ export default function Baccarat() {
         // Banker pays 0.95:1 (5% commission)
         const winnings = Math.floor(betAmount * 0.95)
         payout = betAmount + winnings
-        msg = `Banker wins! You win ${winnings.toLocaleString()} $MNKY (5% commission)`
+        msg = `Banker wins! You win ${winnings.toLocaleString()} credits (5% commission)`
       } else {
         // Player pays 1:1
         payout = betAmount * 2
-        msg = `Player wins! You win ${betAmount.toLocaleString()} $MNKY`
+        msg = `Player wins! You win ${betAmount.toLocaleString()} credits`
       }
       cls = 'win'
     } else {
-      msg = `${winner.charAt(0).toUpperCase() + winner.slice(1)} wins with ${winner === 'player' ? baccaratHandTotal(pHand) : baccaratHandTotal(bHand)}. You lose ${betAmount.toLocaleString()} $MNKY.`
+      msg = `${winner.charAt(0).toUpperCase() + winner.slice(1)} wins with ${winner === 'player' ? baccaratHandTotal(pHand) : baccaratHandTotal(bHand)}. You lose ${betAmount.toLocaleString()} credits.`
       cls = 'lose'
     }
 
@@ -488,7 +488,7 @@ export default function Baccarat() {
         <span>
           Balance:{' '}
           <strong style={{ color: 'var(--green)' }}>
-            {state.balance.toLocaleString()} $MNKY
+            {state.balance.toLocaleString()} credits
           </strong>
         </span>
         <span>

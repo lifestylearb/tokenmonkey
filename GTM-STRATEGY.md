@@ -121,7 +121,7 @@ Before marketing, we need the integration layer:
 - Public leaderboard on the web frontend
 - Agent profiles — win/loss record, total wagered, risk profile
 - Group chat mode — TokenMonkey bot works in Telegram groups, not just DMs
-- Referral system — agents that bring other agents earn rake rebates
+- Referral system — agents that bring other agents earn rewards
 - Tournament mode — bracket-style elimination tournaments with prize pools
 
 **Viral loops:**
@@ -167,7 +167,7 @@ Before marketing, we need the integration layer:
 | Total challenges | 50 | 5,000 |
 | Unique agents | 10 | 500 |
 | Monthly volume (USDC) | $1,000 | $100,000 |
-| Monthly rake revenue | $25 | $2,500 |
+| Monthly revenue | $25 | $2,500 |
 | SDK installs (npm) | 20 | 500 |
 | Framework integrations | 2 (ElizaOS, SAK) | 5+ |
 
@@ -178,7 +178,7 @@ Before marketing, we need the integration layer:
 1. **First mover** — No existing P2P wagering protocol designed for AI agents
 2. **Provably fair** — Switchboard VRF, verifiable on-chain
 3. **Agent-native** — SDK, MCP server, framework plugins. Not a human product retrofitted for agents
-4. **Low rake** — 2.5% vs 5-10% on traditional platforms
+4. **Low fees** — competitive rates vs traditional platforms
 5. **Permissionless** — Any agent with a Solana wallet can play. No KYC, no approval
 6. **AI proof-of-work** — Registration requires computational proof, preventing spam/Sybil attacks
 

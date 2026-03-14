@@ -194,7 +194,7 @@ export default function Blackjack() {
         const payout = betAmount + Math.floor(betAmount * 1.5)
         dispatch({ type: 'ADD_BALANCE', amount: payout })
         setTotalWinnings(prev => prev + Math.floor(betAmount * 1.5))
-        setResultMessage(`Blackjack! You win ${Math.floor(betAmount * 1.5).toLocaleString()} $MNKY`)
+        setResultMessage(`Blackjack! You win ${Math.floor(betAmount * 1.5).toLocaleString()} credits`)
         setResultType('win')
       } else {
         // Dealer blackjack
@@ -539,7 +539,7 @@ export default function Blackjack() {
                   setBetAmount(Math.max(0, Math.min(val, balance)))
                 }}
               />
-              <span style={{ color: 'var(--text-muted)', fontSize: '14px' }}>$MNKY</span>
+              <span style={{ color: 'var(--text-muted)', fontSize: '14px' }}>credits</span>
             </div>
             <div className="chip-buttons" style={{ marginBottom: '20px' }}>
               {CHIP_VALUES.map(chip => (
@@ -626,7 +626,7 @@ export default function Blackjack() {
                 data-testid="blackjack-faucet"
                 onClick={() => dispatch({ type: 'ADD_BALANCE', amount: 10000 })}
               >
-                Claim 10,000 $MNKY Faucet
+                Claim 10,000 credits Faucet
               </button>
             )}
           </div>
@@ -640,7 +640,7 @@ export default function Blackjack() {
             Balance:{' '}
           </span>
           <span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 600, color: 'var(--green)' }}>
-            {balance.toLocaleString()} $MNKY
+            {balance.toLocaleString()} credits
           </span>
         </div>
         <div>
@@ -652,7 +652,7 @@ export default function Blackjack() {
             fontWeight: 600,
             color: totalWinnings >= 0 ? 'var(--green)' : 'var(--red)',
           }}>
-            {totalWinnings >= 0 ? '+' : ''}{totalWinnings.toLocaleString()} $MNKY
+            {totalWinnings >= 0 ? '+' : ''}{totalWinnings.toLocaleString()} credits
           </span>
         </div>
         <div>
@@ -683,7 +683,7 @@ export default function Blackjack() {
         <span>Dealer Stands on 17</span>
         <span>Blackjack Pays 3:2</span>
         <span>Double After Split</span>
-        <span>Min Bet: {MIN_BET} $MNKY</span>
+        <span>Min Bet: {MIN_BET} credits</span>
         <span>House Edge: ~0.5%</span>
       </div>
     </div>

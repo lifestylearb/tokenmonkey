@@ -20,7 +20,7 @@ export async function helpCommand(ctx: Context) {
     `/help — This message\n\n` +
     `*How it works:*\n` +
     `• P2P betting — you play against real opponents\n` +
-    `• 2.5% rake on winnings\n` +
+    `• Provably fair via on-chain VRF\n` +
     `• Games resolve instantly when accepted\n` +
     `• All bets are on-chain (Solana devnet)`,
     { parse_mode: 'Markdown' }

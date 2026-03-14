@@ -52,7 +52,7 @@ export default function Header({ onConnectClick }: HeaderProps) {
           <>
             <div className="balance-display" data-testid="balance-display" data-balance={state.balance}>
               <span className="balance-amount" data-testid="balance-amount">{state.balance.toLocaleString()}</span>
-              <span className="balance-token">$MNKY</span>
+              <span className="balance-token">credits</span>
             </div>
             {state.solBalance > 0 && (
               <div className="balance-display sol-balance">

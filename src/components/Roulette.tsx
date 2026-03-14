@@ -362,8 +362,8 @@ export default function Roulette() {
         {phase === 'result' && (
           <div className={`game-result ${winnings > 0 ? 'win' : 'lose'}`} data-testid="game-result" aria-live="polite">
             {winnings > 0
-              ? `You won ${winnings.toLocaleString()} $MNKY!`
-              : `No luck this time. Lost ${totalBet.toLocaleString()} $MNKY.`}
+              ? `You won ${winnings.toLocaleString()} credits!`
+              : `No luck this time. Lost ${totalBet.toLocaleString()} credits.`}
           </div>
         )}
 
@@ -525,7 +525,7 @@ export default function Roulette() {
                 }
                 onClick={placeBet}
               >
-                Place Bet ({chipValue.toLocaleString()} $MNKY)
+                Place Bet ({chipValue.toLocaleString()} credits)
               </button>
               {bets.length > 0 && (
                 <button className="btn btn-danger btn-sm" data-testid="roulette-clear-all" onClick={clearAllBets}>
@@ -605,13 +605,13 @@ export default function Roulette() {
         <div>
           <span style={{ fontSize: 12, color: 'var(--text-muted)', marginRight: 8 }}>Balance:</span>
           <span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 600, color: 'var(--green)' }}>
-            {state.balance.toLocaleString()} $MNKY
+            {state.balance.toLocaleString()} credits
           </span>
         </div>
         <div>
           <span style={{ fontSize: 12, color: 'var(--text-muted)', marginRight: 8 }}>Total Bet:</span>
           <span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 600, color: 'var(--accent)' }}>
-            {totalBet.toLocaleString()} $MNKY
+            {totalBet.toLocaleString()} credits
           </span>
         </div>
         <div style={{ fontSize: 12, color: 'var(--text-muted)' }}>

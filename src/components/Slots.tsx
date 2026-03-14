@@ -252,7 +252,7 @@ export default function Slots() {
                 {result.count >= 5 ? 'JACKPOT! ' : ''}
                 {result.count}x {result.symbol.emoji} {result.symbol.name}
                 {' '}&mdash;{' '}
-                Won {result.payout.toLocaleString()} $MNKY!
+                Won {result.payout.toLocaleString()} credits!
               </div>
             ) : (
               <div className="game-result lose">
@@ -278,7 +278,7 @@ export default function Slots() {
             }}
             disabled={anySpinning}
           />
-          <span style={{ color: 'var(--text-muted)', fontSize: 13, fontWeight: 600 }}>$MNKY</span>
+          <span style={{ color: 'var(--text-muted)', fontSize: 13, fontWeight: 600 }}>credits</span>
         </div>
 
         <div className="chip-buttons">
@@ -339,7 +339,7 @@ export default function Slots() {
         <div>
           <span style={{ color: 'var(--text-muted)', fontSize: 12 }}>BALANCE </span>
           <span style={{ fontFamily: "'JetBrains Mono', monospace", color: 'var(--green)', fontWeight: 600 }}>
-            {state.balance.toLocaleString()} $MNKY
+            {state.balance.toLocaleString()} credits
           </span>
         </div>
         <div>

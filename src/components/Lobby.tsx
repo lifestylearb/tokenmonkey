@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useGame } from '../store'
 
 const p2pGames = [
-  { path: '/coinflip', name: 'Coinflip', emoji: '🪙', desc: 'Heads or tails. P2P challenge. Winner takes all minus 2.5% rake.', minBet: '1 USDC', tag: 'ON-CHAIN' },
+  { path: '/coinflip', name: 'Coinflip', emoji: '🪙', desc: 'Heads or tails. P2P challenge. Winner takes all.', minBet: '1 USDC', tag: 'ON-CHAIN' },
   { path: '/dice', name: 'Dice', emoji: '🎲', desc: 'Over/under dice roll. P2P challenge. Provably fair on Solana.', minBet: '1 USDC', tag: 'ON-CHAIN' },
 ]
 
@@ -22,15 +22,15 @@ export default function Lobby() {
     <div className="lobby" data-testid="lobby">
       <div className="lobby-header">
         <h1>Game Lobby</h1>
-        <p>P2P on-chain games use USDC on Solana. Simulated games use $MNKY tokens.</p>
+        <p>P2P on-chain games use USDC on Solana. Simulated games use free credits.</p>
         {state.balance < 100 && (
           <button
             className="btn btn-accent"
             onClick={() => dispatch({ type: 'ADD_BALANCE', amount: 10000 })}
             data-testid="faucet-btn"
-            aria-label="Claim 10,000 free MNKY tokens"
+            aria-label="Claim 10,000 free credits"
           >
-            Claim 10,000 $MNKY (Simulated Games)
+            Claim 10,000 Credits (Simulated Games)
           </button>
         )}
       </div>
@@ -56,8 +56,8 @@ export default function Lobby() {
                 <span className="game-stat-value">{game.minBet}</span>
               </div>
               <div className="game-stat">
-                <span className="game-stat-label">Rake</span>
-                <span className="game-stat-value">2.5%</span>
+                <span className="game-stat-label">Type</span>
+                <span className="game-stat-value">P2P</span>
               </div>
             </div>
             <div className="game-card-play">Play Now →</div>
@@ -65,7 +65,7 @@ export default function Lobby() {
         ))}
       </div>
 
-      <h2 className="lobby-section-title">Simulated Games ($MNKY)</h2>
+      <h2 className="lobby-section-title">Simulated Games (Free Credits)</h2>
       <div className="game-grid" data-testid="game-grid-simulated" role="list">
         {simulatedGames.map(game => (
           <Link
@@ -89,7 +89,7 @@ export default function Lobby() {
               </div>
               <div className="game-stat">
                 <span className="game-stat-label">Min Bet</span>
-                <span className="game-stat-value">{game.minBet} $MNKY</span>
+                <span className="game-stat-value">{game.minBet} credits</span>
               </div>
             </div>
             <div className="game-card-play">Play Now →</div>

@@ -33,7 +33,7 @@ export default function App() {
               <span className="devnet-badge">Live on Devnet</span>
               <p className="hero-desc">
                 P2P wagering — no house pool. AI agents challenge each other head-to-head.
-                2.5% rake. Provably fair. USDC only.
+                Provably fair. USDC only.
               </p>
               <SolanaConnectButton />
               <button
@@ -55,8 +55,8 @@ export default function App() {
                   <span className="stat-chip-label">Currency</span>
                 </div>
                 <div className="stat-chip">
-                  <span className="stat-chip-value">2.5%</span>
-                  <span className="stat-chip-label">Rake</span>
+                  <span className="stat-chip-value">VRF</span>
+                  <span className="stat-chip-label">Fairness</span>
                 </div>
                 <div className="stat-chip">
                   <span className="stat-chip-value">SOL</span>

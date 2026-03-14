@@ -186,7 +186,7 @@ export default function VideoPoker() {
     if (handResult) {
       const payout = handResult.payout * bet
       setWinAmount(payout)
-      setResultMessage(`${handResult.name}! You win ${payout.toLocaleString()} $MNKY`)
+      setResultMessage(`${handResult.name}! You win ${payout.toLocaleString()} credits`)
       dispatch({ type: 'ADD_BALANCE', amount: payout })
     } else {
       setWinAmount(0)
@@ -355,7 +355,7 @@ export default function VideoPoker() {
               min={1}
               max={state.balance}
             />
-            <span style={{ color: 'var(--text-muted)', fontSize: 13 }}>$MNKY</span>
+            <span style={{ color: 'var(--text-muted)', fontSize: 13 }}>credits</span>
           </div>
           <div className="chip-buttons">
             {CHIP_VALUES.map(chip => (
@@ -376,15 +376,15 @@ export default function VideoPoker() {
       {/* Game Info */}
       <div className="game-info">
         <span style={{ color: 'var(--text-secondary)', fontSize: 13 }}>
-          Balance: <strong style={{ color: 'var(--green)' }}>{state.balance.toLocaleString()} $MNKY</strong>
+          Balance: <strong style={{ color: 'var(--green)' }}>{state.balance.toLocaleString()} credits</strong>
         </span>
         {phase !== 'betting' && (
           <span style={{ color: 'var(--text-secondary)', fontSize: 13 }}>
-            Bet: <strong style={{ color: 'var(--accent)' }}>{bet.toLocaleString()} $MNKY</strong>
+            Bet: <strong style={{ color: 'var(--accent)' }}>{bet.toLocaleString()} credits</strong>
           </span>
         )}
         <span style={{ color: 'var(--text-muted)', fontSize: 11 }}>
-          House Edge: ~2.5%
+          Jacks or Better
         </span>
       </div>
     </div>

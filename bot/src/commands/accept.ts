@@ -74,7 +74,7 @@ export async function acceptCommand(ctx: Context) {
       await ctx.reply(
         `🎉 *Challenge #${challengeId} — YOU WON!*\n\n` +
         `Payout: *${result.payoutUsdc} USDC*\n` +
-        `(${betAmount} x2 minus 2.5% rake)`,
+        `(${betAmount} x2)`,
         { parse_mode: 'Markdown' }
       )
     } else {

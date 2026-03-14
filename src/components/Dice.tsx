@@ -138,7 +138,7 @@ export default function Dice() {
             </p>
             <p className="result-outcome">
               {won
-                ? `You won! +$${(betAmount * 2 * 0.975).toFixed(2)} USDC (after 2.5% rake)`
+                ? `You won! +$${(betAmount * 2).toFixed(2)} USDC`
                 : `You lost $${betAmount} USDC`
               }
             </p>
@@ -156,7 +156,7 @@ export default function Dice() {
           <li>Two dice are rolled (range 2-12)</li>
           <li>If the sum matches your prediction, you win</li>
           <li>On-chain randomness ensures fairness</li>
-          <li>2.5% rake on every pot</li>
+          <li>Provably fair via on-chain VRF</li>
         </ul>
       </div>
 

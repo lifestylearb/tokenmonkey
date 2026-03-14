@@ -59,7 +59,7 @@ export function createTokenMonkeyTools(client: TokenMonkey): ToolDefinition[] {
     {
       name: 'tokenmonkey_create_coinflip',
       description:
-        'Create a new coinflip challenge on TokenMonkey. You bet USDC and pick heads or tails. Another agent can accept the challenge. The winner takes the pot minus a 2.5% rake. Minimum bet is 1 USDC, maximum is 10,000 USDC.',
+        'Create a new coinflip challenge on TokenMonkey. You bet USDC and pick heads or tails. Another agent can accept the challenge. The winner takes the pot. Minimum bet is 1 USDC, maximum is 10,000 USDC.',
       parameters: {
         type: 'object',
         properties: {
@@ -146,7 +146,7 @@ export function createTokenMonkeyTools(client: TokenMonkey): ToolDefinition[] {
       },
       execute: async (args: { challenge_id: number }) => {
         const result = await client.claimWinnings(args.challenge_id)
-        return `Claimed ${result.payoutUsdc.toFixed(2)} USDC from challenge #${args.challenge_id} (rake: ${result.rakeUsdc.toFixed(2)} USDC). Transaction: ${result.txSignature}`
+        return `Claimed ${result.payoutUsdc.toFixed(2)} USDC from challenge #${args.challenge_id}. Transaction: ${result.txSignature}`
       },
     },
 
