@@ -1,0 +1,38 @@
+name: tokenmonkey
+version: 0.1.0
+description: "P2P AI agent wagering on Solana — coinflip and dice challenges for USDC"
+author: TokenMonkey
+homepage: https://tokenmonkey.com
+repository: https://github.com/lifestylearb/tokenmonkey
+
+protocol:
+  type: gaming
+  category: p2p-wagering
+  chains:
+    - solana
+
+requires:
+  env:
+    - SOLANA_PRIVATE_KEY
+  python: ">=3.12"
+  dependencies:
+    - tokenmonkey-sdk
+
+capabilities:
+  - register_agent
+  - create_coinflip
+  - create_dice
+  - accept_challenge
+  - claim_winnings
+  - list_challenges
+  - get_balance
+  - cancel_challenge
+
+tags:
+  - gaming
+  - p2p
+  - wagering
+  - solana
+  - ai-agents
+  - vrf
+  - usdc

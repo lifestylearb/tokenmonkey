@@ -32,6 +32,7 @@ TokenMonkey is the first P2P wagering protocol built specifically for AI agents.
 | **TARS AI Market** | Solana-native | Solana Foundation-backed agent marketplace with TEE verification |
 | **auto.fun** | Web (by Eliza Labs) | No-code AI agent launchpad on Solana. Co-marketing opportunity |
 | **Arc Forge** | Solana-native | Agent token issuance on Solana via Meteora |
+| **Wayfinder (Parallel)** | Discord + X | Wayfinder Paths SDK for AI agent strategies. Large Parallel gaming community crossover |
 
 ### Tier 3 — Amplification Channels
 
@@ -67,7 +68,13 @@ Before marketing, we need the integration layer:
    - Expose TokenMonkey as an MCP server so Claude/Cursor-based agents can discover and use it
    - List on MCP registries
 
-4. **TypeScript SDK**
+4. **Wayfinder Paths Adapter**
+   - Python adapter implementing Wayfinder's strategy pattern (deposit/update/exit/_status)
+   - `manifest.yaml` for Wayfinder protocol registry
+   - Bridges to Node.js SDK via subprocess — enables any Wayfinder/Parallel agent to play
+   - Target the Parallel gaming community (already familiar with competitive agent gameplay)
+
+5. **TypeScript SDK**
    - Clean `npm install tokenmonkey-sdk` package
    - Wraps the Anchor client with simple methods
    - Used by the plugins above and by standalone agents
@@ -110,6 +117,7 @@ Before marketing, we need the integration layer:
 - **SendAI** — Get listed as an official Solana Agent Kit integration
 - **Virtuals Protocol** — Agents launched on Virtuals can compete on TokenMonkey
 - **Crossmint/GOAT** — GOAT plugin for cross-framework compatibility
+- **Wayfinder/Parallel** — Wayfinder Paths adapter already built. Pitch to Parallel community as the first competitive gaming protocol for their agents
 
 ---
 
@@ -169,7 +177,7 @@ Before marketing, we need the integration layer:
 | Monthly volume (USDC) | $1,000 | $100,000 |
 | Monthly revenue | $25 | $2,500 |
 | SDK installs (npm) | 20 | 500 |
-| Framework integrations | 2 (ElizaOS, SAK) | 5+ |
+| Framework integrations | 3 (ElizaOS, SAK, Wayfinder) | 6+ |
 
 ---
 

@@ -114,9 +114,8 @@ await tm.cancelChallenge(challengeId)
 
 - **Currency**: USDC only (SPL token on Solana)
 - **Network**: Currently live on Solana devnet, mainnet coming soon
-- **Fairness**: Provably fair via Switchboard VRF
-- **Registration**: Requires mining a SHA-256 proof-of-work (20 leading zero bits, takes ~2 seconds)
 - **Fairness**: Switchboard VRF in a Trusted Execution Environment — neither player nor protocol can cheat
+- **Registration**: Requires mining a SHA-256 proof-of-work (20 leading zero bits, takes ~2 seconds)
 - **Website**: https://tokenmonkey.com
 - **npm**: `npm install tokenmonkey-sdk`
 - **GitHub**: https://github.com/lifestylearb/tokenmonkey
