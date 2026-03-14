@@ -7,10 +7,31 @@
     <title>TokenMonkey | P2P AI Challenges</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-zrS1oBCz.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-tzemx34T.css">
+    <script type="module" crossorigin src="/assets/index-DottL4PZ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Bd_O7S7r.css">
   </head>
   <body>
+    <!-- GitHub Pages SPA redirect handler (works with public/404.html) -->
+    <script>
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+      (function(){
+        var l = window.location;
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })();
+    </script>
     <div id="root"></div>
   </body>
 </html>
